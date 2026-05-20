@@ -2,7 +2,7 @@
 
 Learn Bengali from zero: **alphabet first** (vowels → consonants → vowel markers), then vocabulary and phrases. No audio required — fully static and free on GitHub Pages.
 
-**Live site:** https://rbeckwith.github.io/Language/
+**Live site:** https://rjbeckwith55.github.io/Language/
 
 ## Learning path
 
@@ -34,7 +34,7 @@ npm run dev
 
 ## Deploy
 
-Push to `main` on `rbeckwith/Language`. GitHub Actions builds and deploys to Pages. Enable **Settings → Pages → GitHub Actions** once.
+Push to `main` on `Rjbeckwith55/Language`. GitHub Actions builds and deploys to Pages. Enable **Settings → Pages → GitHub Actions** once.
 
 ## Optional: GCP seed scripts
 
