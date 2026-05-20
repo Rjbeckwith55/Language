@@ -1,38 +1,38 @@
 import { useEffect, useState } from "react";
-import type { LessonsData, UserProgress } from "./types";
+import type { Curriculum, UserProgress } from "./types";
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
-import { LessonRunner } from "./components/LessonRunner";
+import { UnitRunner } from "./components/UnitRunner";
 import { loadProgress } from "./utils/progress";
 import "./App.css";
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/lessons.json`;
+const DATA_URL = `${import.meta.env.BASE_URL}data/curriculum.json`;
 
 export default function App() {
-  const [data, setData] = useState<LessonsData | null>(null);
+  const [curriculum, setCurriculum] = useState<Curriculum | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [categoryId, setCategoryId] = useState<string | null>(null);
+  const [unitId, setUnitId] = useState<string | null>(null);
   const [progress, setProgress] = useState<UserProgress>(() => loadProgress());
 
   useEffect(() => {
     fetch(DATA_URL)
       .then((r) => {
-        if (!r.ok) throw new Error(`Failed to load lessons (${r.status})`);
+        if (!r.ok) throw new Error(`Failed to load curriculum (${r.status})`);
         return r.json();
       })
-      .then(setData)
+      .then(setCurriculum)
       .catch((e: Error) => setError(e.message));
   }, []);
 
   if (error) {
     return (
       <div className="app error">
-        <p>Could not load lessons: {error}</p>
+        <p>Could not load curriculum: {error}</p>
       </div>
     );
   }
 
-  if (!data) {
+  if (!curriculum) {
     return (
       <div className="app loading">
         <p>Loading…</p>
@@ -43,15 +43,16 @@ export default function App() {
   return (
     <div className="app">
       <Header progress={progress} />
-      {categoryId ? (
-        <LessonRunner
-          data={data}
-          categoryId={categoryId}
-          onBack={() => setCategoryId(null)}
+      {unitId ? (
+        <UnitRunner
+          curriculum={curriculum}
+          unitId={unitId}
+          progress={progress}
+          onBack={() => setUnitId(null)}
           onProgress={setProgress}
         />
       ) : (
-        <Home data={data} progress={progress} onSelectCategory={setCategoryId} />
+        <Home curriculum={curriculum} progress={progress} onSelectUnit={setUnitId} />
       )}
     </div>
   );

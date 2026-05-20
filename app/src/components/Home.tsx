@@ -1,58 +1,67 @@
-import type { Category, LessonsData, UserProgress } from "../types";
+import type { Curriculum, UserProgress } from "../types";
+import { isUnitUnlocked, nextPlayableUnit, unitProgress } from "../utils/progress";
 
 interface Props {
-  data: LessonsData;
+  curriculum: Curriculum;
   progress: UserProgress;
-  onSelectCategory: (id: string) => void;
+  onSelectUnit: (id: string) => void;
 }
 
-export function Home({ data, progress, onSelectCategory }: Props) {
-  function countDone(categoryId: string) {
-    const ids = data.lessons.filter((l) => l.category_id === categoryId).map((l) => l.lesson_id);
-    return ids.filter((id) => progress.completedLessons.includes(id)).length;
-  }
+export function Home({ curriculum, progress, onSelectUnit }: Props) {
+  const units = [...curriculum.units].sort((a, b) => a.order - b.order);
+  const continueUnit = nextPlayableUnit(curriculum, progress);
 
   return (
     <main className="home">
       <section className="hero">
-        <h1>Learn Bengali</h1>
+        <h1>Learn Bengali from zero</h1>
         <p className="subtitle">
-          Gamified lessons with word banks, listening, and speaking — powered by pre-cached Google
-          Cloud translations &amp; audio.
+          Start with the alphabet — vowels, consonants, and vowel markers — then vocabulary and
+          sentences. Complete each unit to unlock the next.
         </p>
+        {continueUnit && (
+          <button type="button" className="btn primary continue-btn" onClick={() => onSelectUnit(continueUnit)}>
+            Continue learning
+          </button>
+        )}
       </section>
 
       <section className="paths">
-        <h2>Choose a path</h2>
-        <div className="path-grid">
-          {data.categories.map((cat: Category) => {
-            const total = data.lessons.filter((l) => l.category_id === cat.id).length;
-            const done = countDone(cat.id);
+        <h2>Your path</h2>
+        <ol className="unit-path">
+          {units.map((unit) => {
+            const unlocked = isUnitUnlocked(unit.id, curriculum, progress);
+            const { done, total } = unitProgress(unit.id, curriculum, progress);
+            const complete = progress.completedUnits.includes(unit.id);
+
             return (
-              <button
-                key={cat.id}
-                type="button"
-                className="path-card"
-                onClick={() => onSelectCategory(cat.id)}
-              >
-                <span className="path-icon">{cat.icon}</span>
-                <span className="path-title">{cat.title}</span>
-                <span className="path-progress">
-                  {done}/{total} phrases
-                </span>
-              </button>
+              <li key={unit.id} className={`unit-step ${unlocked ? "" : "locked"} ${complete ? "done" : ""}`}>
+                <button
+                  type="button"
+                  className="unit-card"
+                  disabled={!unlocked}
+                  onClick={() => onSelectUnit(unit.id)}
+                >
+                  <span className="unit-order">{unit.order + 1}</span>
+                  <span className="unit-icon bengali">{unit.icon}</span>
+                  <span className="unit-text">
+                    <span className="unit-title">{unit.title}</span>
+                    <span className="unit-sub">{unit.subtitle}</span>
+                    <span className="unit-desc">{unit.description}</span>
+                    {unlocked && (
+                      <span className="unit-progress-bar">
+                        <span className="unit-progress-fill" style={{ width: `${(done / total) * 100}%` }} />
+                      </span>
+                    )}
+                    <span className="path-progress">
+                      {!unlocked ? "Locked" : complete ? "Complete" : `${done}/${total} items`}
+                    </span>
+                  </span>
+                </button>
+              </li>
             );
           })}
-        </div>
-      </section>
-
-      <section className="about">
-        <h3>How it works</h3>
-        <ul>
-          <li>Translations &amp; TTS audio are pre-generated on GCP (not live per click).</li>
-          <li>Four exercise types rotate: word bank, multiple choice, listening, speaking.</li>
-          <li>Speaking uses browser recognition; run the Python pipeline for Google STT batch tests.</li>
-        </ul>
+        </ol>
       </section>
     </main>
   );

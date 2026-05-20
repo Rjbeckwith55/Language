@@ -1,0 +1,190 @@
+{
+  "version": 2,
+  "units": [
+    {
+      "id": "vowels",
+      "order": 0,
+      "title": "Vowels",
+      "subtitle": "স্বরবর্ণ · Shorboborno",
+      "icon": "অ",
+      "description": "Independent vowels — the building blocks of Bengali script.",
+      "itemType": "letter",
+      "items": [
+        { "id": "v_1", "character": "অ", "name": "Shor-o", "english_sound": "o", "example_word": "অজগর (Ojogor - Python)" },
+        { "id": "v_2", "character": "আ", "name": "Shor-a", "english_sound": "aa", "example_word": "আম (Aam - Mango)" },
+        { "id": "v_3", "character": "ই", "name": "Rossho-i", "english_sound": "ee", "example_word": "ইঁদুর (Indur - Mouse)" },
+        { "id": "v_4", "character": "ঈ", "name": "Deergho-i", "english_sound": "ee (long)", "example_word": "ঈগল (Eegol - Eagle)" },
+        { "id": "v_5", "character": "উ", "name": "Rossho-u", "english_sound": "u", "example_word": "উট (Ut - Camel)" },
+        { "id": "v_6", "character": "ঊ", "name": "Deergho-u", "english_sound": "oo", "example_word": "ঊর্মি (Urmi - Wave)" },
+        { "id": "v_7", "character": "ঋ", "name": "Ri", "english_sound": "ree", "example_word": "ঋষি (Rishi - Sage)" },
+        { "id": "v_8", "character": "এ", "name": "E", "english_sound": "e / ae", "example_word": "এক (Ek - One)" },
+        { "id": "v_9", "character": "ঐ", "name": "Oi", "english_sound": "oy", "example_word": "ঐরাবত (Oirabot - Elephant)" },
+        { "id": "v_10", "character": "ও", "name": "O", "english_sound": "oh", "example_word": "ওজন (Ojon - Weight)" },
+        { "id": "v_11", "character": "ঔ", "name": "Ou", "english_sound": "ow", "example_word": "ঔষধ (Oushodh - Medicine)" }
+      ]
+    },
+    {
+      "id": "consonants_1",
+      "order": 1,
+      "title": "Consonants I",
+      "subtitle": "ব্যঞ্জনবর্ণ · First row (ক–ঙ)",
+      "icon": "ক",
+      "description": "Core consonants with inherent “o” sound unless a vowel marker is added.",
+      "itemType": "letter",
+      "items": [
+        { "id": "c_1", "character": "ক", "name": "Ko", "english_sound": "k", "example_word": "কলা (Kola - Banana)" },
+        { "id": "c_2", "character": "খ", "name": "Kho", "english_sound": "kh (aspirated)", "example_word": "খাতা (Khata - Notebook)" },
+        { "id": "c_3", "character": "গ", "name": "Go", "english_sound": "g", "example_word": "গাড়ি (Gari - Car)" },
+        { "id": "c_4", "character": "ঘ", "name": "Gho", "english_sound": "gh (aspirated)", "example_word": "ঘড়ি (Ghori - Clock)" },
+        { "id": "c_5", "character": "ঙ", "name": "Umo", "english_sound": "ng", "example_word": "ব্যাঙ (Byang - Frog)" }
+      ]
+    },
+    {
+      "id": "modifiers",
+      "order": 2,
+      "title": "Vowel markers",
+      "subtitle": "কার · Kar symbols",
+      "icon": "া",
+      "description": "Vowels change shape when they attach to consonants.",
+      "itemType": "modifier",
+      "items": [
+        {
+          "id": "m_1",
+          "parent_vowel": "আ",
+          "modifier_symbol": "া",
+          "modifier_name": "Akar",
+          "formula_text": "ক (Ko) + া (Akar) = কা",
+          "formula_sound": "Kaa",
+          "example_word": "কান (Kaan - Ear)",
+          "result_character": "কা"
+        },
+        {
+          "id": "m_2",
+          "parent_vowel": "ই",
+          "modifier_symbol": "ি",
+          "modifier_name": "Rossho-ikar",
+          "formula_text": "ক (Ko) + ি (Ikar) = কি",
+          "formula_sound": "Kee",
+          "example_word": "কিনুন (Kinun - Buy)",
+          "result_character": "কি"
+        }
+      ]
+    },
+    {
+      "id": "vocab_basics",
+      "order": 3,
+      "title": "Basics",
+      "subtitle": "Greetings & essentials",
+      "icon": "👋",
+      "description": "High-frequency words for everyday conversation.",
+      "itemType": "vocab",
+      "items": [
+        { "id": "vocab_01", "category": "Basics", "english": "Yes", "bengali": "হ্যাঁ", "transliteration": "Hae", "literal_meaning": "Yes" },
+        { "id": "vocab_02", "category": "Basics", "english": "No", "bengali": "না", "transliteration": "Na", "literal_meaning": "No" },
+        { "id": "vocab_03", "category": "Basics", "english": "Thank you", "bengali": "ধন্যবাদ", "transliteration": "Dhonnobad", "literal_meaning": "Thank you" },
+        { "id": "vocab_04", "category": "Basics", "english": "Please", "bengali": "দয়া করে", "transliteration": "Doya kore", "literal_meaning": "Having done kindness" }
+      ]
+    },
+    {
+      "id": "vocab_food",
+      "order": 4,
+      "title": "Food & drink",
+      "subtitle": "জল, ভাত, মাছ…",
+      "icon": "🍛",
+      "description": "Essential food vocabulary.",
+      "itemType": "vocab",
+      "items": [
+        { "id": "vocab_05", "category": "Food", "english": "Water", "bengali": "জল", "transliteration": "Jol", "literal_meaning": "Water (West Bengal; Bangladesh often uses পানি)" },
+        { "id": "vocab_06", "category": "Food", "english": "Rice", "bengali": "ভাত", "transliteration": "Bhat", "literal_meaning": "Cooked rice" },
+        { "id": "vocab_07", "category": "Food", "english": "Fish", "bengali": "মাছ", "transliteration": "Mach", "literal_meaning": "Fish" },
+        { "id": "vocab_08", "category": "Food", "english": "Milk", "bengali": "দুধ", "transliteration": "Dudh", "literal_meaning": "Milk" }
+      ]
+    },
+    {
+      "id": "vocab_family",
+      "order": 5,
+      "title": "Family",
+      "subtitle": "মা, বাবা, বন্ধু",
+      "icon": "👨‍👩‍👧",
+      "description": "People close to you.",
+      "itemType": "vocab",
+      "items": [
+        { "id": "vocab_09", "category": "Family", "english": "Mother", "bengali": "মা", "transliteration": "Ma", "literal_meaning": "Mother" },
+        { "id": "vocab_10", "category": "Family", "english": "Father", "bengali": "বাবা", "transliteration": "Baba", "literal_meaning": "Father" },
+        { "id": "vocab_11", "category": "Family", "english": "Friend", "bengali": "বন্ধু", "transliteration": "Bondhu", "literal_meaning": "Friend" }
+      ]
+    },
+    {
+      "id": "phrases_1",
+      "order": 6,
+      "title": "Phrases I",
+      "subtitle": "Beginner 1 · SOV word order",
+      "icon": "💬",
+      "description": "Simple sentences — Bengali is Subject–Object–Verb.",
+      "itemType": "phrase",
+      "items": [
+        {
+          "id": "phrase_01",
+          "difficulty": "Beginner 1",
+          "english": "How are you?",
+          "bengali": "আপনি কেমন আছেন?",
+          "transliteration": "Apni kemon achen?",
+          "word_bank_bengali": ["আপনি", "কেমন", "আছেন?"],
+          "formal": true
+        },
+        {
+          "id": "phrase_02",
+          "difficulty": "Beginner 1",
+          "english": "I am well.",
+          "bengali": "আমি ভালো আছি।",
+          "transliteration": "Ami bhalo achhi.",
+          "word_bank_bengali": ["আমি", "ভালো", "আছি।"]
+        },
+        {
+          "id": "phrase_03",
+          "difficulty": "Beginner 1",
+          "english": "What is your name?",
+          "bengali": "আপনার নাম কি?",
+          "transliteration": "Apnar nam ki?",
+          "word_bank_bengali": ["আপনার", "নাম", "কি?"]
+        }
+      ]
+    },
+    {
+      "id": "phrases_2",
+      "order": 7,
+      "title": "Phrases II",
+      "subtitle": "Beginner 2",
+      "icon": "📝",
+      "description": "Longer sentences with everyday verbs.",
+      "itemType": "phrase",
+      "items": [
+        {
+          "id": "phrase_04",
+          "difficulty": "Beginner 2",
+          "english": "I eat rice.",
+          "bengali": "আমি ভাত খাই।",
+          "transliteration": "Ami bhat khai.",
+          "word_bank_bengali": ["আমি", "ভাত", "খাই।"]
+        },
+        {
+          "id": "phrase_05",
+          "difficulty": "Beginner 2",
+          "english": "I want water.",
+          "bengali": "আমি জল চাই।",
+          "transliteration": "Ami jol chai.",
+          "word_bank_bengali": ["আমি", "জল", "চাই।"]
+        },
+        {
+          "id": "phrase_06",
+          "difficulty": "Beginner 2",
+          "english": "Where is the hotel?",
+          "bengali": "হোটেলটি কোথায়?",
+          "transliteration": "Hotel-ti kothay?",
+          "word_bank_bengali": ["হোটেলটি", "কোথায়?"],
+          "note": "The suffix -টি acts like English “the”."
+        }
+      ]
+    }
+  ]
+}

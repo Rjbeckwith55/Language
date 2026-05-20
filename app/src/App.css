@@ -64,6 +64,144 @@
   line-height: 1.5;
 }
 
+.continue-btn {
+  margin-top: 16px;
+  max-width: 280px;
+}
+
+.unit-path {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.unit-step.locked .unit-card {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.unit-step.done .unit-card {
+  border-color: var(--green);
+}
+
+.unit-card {
+  width: 100%;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  text-align: left;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  transition: transform 0.1s;
+}
+
+.unit-card:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.unit-order {
+  font-weight: 800;
+  color: var(--muted);
+  min-width: 1.5rem;
+}
+
+.unit-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.unit-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.unit-title {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.unit-sub {
+  color: var(--blue-dark);
+  font-size: 0.9rem;
+}
+
+.unit-desc {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.unit-progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.unit-progress-fill {
+  display: block;
+  height: 100%;
+  background: var(--green);
+}
+
+.unit-label {
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.hero-char {
+  font-size: 4rem;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.char-btn {
+  font-size: 2rem;
+  padding: 20px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: 0 3px 0 #ccc;
+}
+
+.char-btn.correct {
+  border-color: var(--green);
+  background: #eaffd6;
+}
+
+.char-btn.wrong {
+  border-color: var(--red);
+  background: #ffe8e8;
+}
+
+.equation {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 12px 0;
+}
+
+.unlock-msg {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
 .path-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

@@ -10,12 +10,12 @@ export default defineConfig({
   plugins: [
     react(),
     {
-      name: "copy-lessons-data",
+      name: "copy-curriculum-data",
       buildStart() {
-        const src = resolve(__dirname, "../data/lessons.json");
+        const src = resolve(__dirname, "../data/curriculum.json");
         const destDir = resolve(__dirname, "public/data");
         if (!existsSync(destDir)) mkdirSync(destDir, { recursive: true });
-        copyFileSync(src, resolve(destDir, "lessons.json"));
+        copyFileSync(src, resolve(destDir, "curriculum.json"));
       },
     },
   ],
