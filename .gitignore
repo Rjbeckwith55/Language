@@ -13,3 +13,4 @@ venv/
 scripts/output/
 .cache/
 *.tsbuildinfo
+/package-lock.json

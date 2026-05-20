@@ -1,0 +1,169 @@
+[
+  {
+    "unit_id": "unit_1_alphabet",
+    "unit_title": "Foundations of Script",
+    "lessons": [
+      {
+        "lesson_id": "u1_l1_vowels_part1",
+        "title": "First Breath: Core Vowels",
+        "focus": ["অ", "আ", "ই"],
+        "questions": [
+          {
+            "id": "q1",
+            "type": "multiple_choice",
+            "prompt": "Identify the sound 'Shor-o'",
+            "target": "অ",
+            "options": ["অ", "আ", "ই", "ক"]
+          },
+          {
+            "id": "q2",
+            "type": "multiple_choice",
+            "prompt": "Identify the sound 'Shor-a'",
+            "target": "আ",
+            "options": ["অ", "আ", "ই", "খ"]
+          },
+          {
+            "id": "q3",
+            "type": "audio_match",
+            "audio_text": "ই",
+            "target": "ই",
+            "options": ["অ", "আ", "ই", "গ"]
+          }
+        ]
+      },
+      {
+        "lesson_id": "u1_l2_consonants_part1",
+        "title": "The First Consonants",
+        "focus": ["ক", "খ", "গ"],
+        "questions": [
+          {
+            "id": "q4",
+            "type": "multiple_choice",
+            "prompt": "Identify the consonant 'Ko'",
+            "target": "ক",
+            "options": ["ক", "খ", "গ", "অ"]
+          },
+          {
+            "id": "q5",
+            "type": "multiple_choice",
+            "prompt": "Identify the consonant 'Kho'",
+            "target": "খ",
+            "options": ["ক", "খ", "গ", "আ"]
+          },
+          {
+            "id": "q6",
+            "type": "audio_match",
+            "audio_text": "গ",
+            "target": "গ",
+            "options": ["ক", "খ", "গ", "ই"]
+          }
+        ]
+      },
+      {
+        "lesson_id": "u1_l3_integration_1",
+        "title": "Mixing Vowels & Consonants",
+        "focus": ["অ", "আ", "ই", "ক", "খ", "গ"],
+        "note": "This loops previous knowledge together into interactive recognition challenges.",
+        "questions": [
+          {
+            "id": "q7",
+            "type": "multiple_choice",
+            "prompt": "Match 'Ko'",
+            "target": "ক",
+            "options": ["ক", "অ", "খ", "ই"]
+          },
+          {
+            "id": "q8",
+            "type": "multiple_choice",
+            "prompt": "Match 'Shor-a'",
+            "target": "আ",
+            "options": ["আ", "গ", "ক", "খ"]
+          }
+        ]
+      },
+      {
+        "lesson_id": "u1_l4_modifiers_intro",
+        "title": "Shape Shifting: Vowel Modifiers",
+        "focus": ["া (Akar)", "ি (Ikar)"],
+        "questions": [
+          {
+            "id": "q9",
+            "type": "modifier_equation",
+            "prompt": "ক (Ko) + া (Akar) = ?",
+            "target": "কা",
+            "options": ["কা", "কি", "কু", "কে"]
+          },
+          {
+            "id": "q10",
+            "type": "modifier_equation",
+            "prompt": "ক (Ko) + ি (Ikar) = ?",
+            "target": "কি",
+            "options": ["কা", "কি", "কু", "কে"]
+          },
+          {
+            "id": "q11",
+            "type": "audio_match",
+            "audio_text": "কা",
+            "target": "কা",
+            "options": ["কা", "কি", "খা", "খি"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit_id": "unit_2_conversational_basics",
+    "unit_title": "First Contacts",
+    "lessons": [
+      {
+        "lesson_id": "u2_l1_essential_vocab",
+        "title": "Yes, No, and Thanks",
+        "focus": ["হ্যাঁ", "না", "ধন্যবাদ"],
+        "questions": [
+          {
+            "id": "q12",
+            "type": "multiple_choice",
+            "prompt": "How do you say 'Yes'?",
+            "target": "হ্যাঁ",
+            "options": ["হ্যাঁ", "না", "ধন্যবাদ", "দয়া করে"]
+          },
+          {
+            "id": "q13",
+            "type": "multiple_choice",
+            "prompt": "How do you say 'No'?",
+            "target": "না",
+            "options": ["হ্যাঁ", "না", "ধন্যবাদ", "দয়া করে"]
+          },
+          {
+            "id": "q14",
+            "type": "multiple_choice",
+            "prompt": "How do you say 'Thank you'?",
+            "target": "ধন্যবাদ",
+            "options": ["হ্যাঁ", "না", "ধন্যবাদ", "দয়া করে"]
+          }
+        ]
+      },
+      {
+        "lesson_id": "u2_l2_sentence_building_1",
+        "title": "Identity & Well-being",
+        "focus": ["আমি ভালো আছি", "আপনার নাম কি?"],
+        "questions": [
+          {
+            "id": "q15",
+            "type": "word_bank",
+            "prompt": "Translate: 'I am well.'",
+            "target_sentence": "আমি ভালো আছি।",
+            "scrambled_words": ["ভালো", "আমি", "আছি।", "জল", "ভাত"]
+          },
+          {
+            "id": "q16",
+            "type": "word_bank",
+            "prompt": "Translate: 'What is your name?'",
+            "target_sentence": "আপনার নাম কি?",
+            "scrambled_words": ["নাম", "আপনার", "কি?", "কেমন", "আছেন?"]
+          }
+        ]
+      }
+    ]
+  }
+]

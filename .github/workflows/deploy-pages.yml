@@ -32,10 +32,10 @@ jobs:
           npm ci 2>/dev/null || npm install
           npm run build
 
-      - name: Copy curriculum into dist
+      - name: Copy syllabus into dist
         run: |
           mkdir -p app/dist/data
-          cp data/curriculum.json app/dist/data/curriculum.json
+          cp data/syllabus.json app/dist/data/syllabus.json
 
       - uses: actions/upload-pages-artifact@v3
         with:

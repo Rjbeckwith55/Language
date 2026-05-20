@@ -1,12 +1,12 @@
-import type { Curriculum, UserProgress } from "../types";
+import type { Syllabus, SyllabusUnit, UserProgress } from "../types";
 
-const STORAGE_KEY = "bangla-learn-progress-v2";
+const STORAGE_KEY = "bangla-learn-progress-v3";
 
 const defaultProgress: UserProgress = {
   xp: 0,
   streak: 0,
   lastPracticeDate: null,
-  completedItems: [],
+  completedLessons: [],
   completedUnits: [],
 };
 
@@ -18,7 +18,7 @@ export function loadProgress(): UserProgress {
     return {
       ...defaultProgress,
       ...parsed,
-      completedItems: parsed.completedItems ?? [],
+      completedLessons: parsed.completedLessons ?? [],
       completedUnits: parsed.completedUnits ?? [],
     };
   } catch {
@@ -40,60 +40,83 @@ function yesterdayISO(): string {
   return d.toISOString().slice(0, 10);
 }
 
-export function isUnitUnlocked(unitId: string, curriculum: Curriculum, progress: UserProgress): boolean {
-  const units = [...curriculum.units].sort((a, b) => a.order - b.order);
-  const index = units.findIndex((u) => u.id === unitId);
-  if (index <= 0) return true;
-  return progress.completedUnits.includes(units[index - 1].id);
-}
-
-export function unitProgress(unitId: string, curriculum: Curriculum, progress: UserProgress): {
-  done: number;
-  total: number;
-} {
-  const unit = curriculum.units.find((u) => u.id === unitId);
-  if (!unit) return { done: 0, total: 0 };
-  const total = unit.items.length;
-  const done = unit.items.filter((i) => progress.completedItems.includes(i.id)).length;
-  return { done, total };
-}
-
-export function completeExercise(
-  itemId: string,
-  unitId: string,
-  curriculum: Curriculum,
-  xpGain = 10,
-): UserProgress {
+export function touchStreak(): void {
   const p = loadProgress();
   const today = todayISO();
-
   if (p.lastPracticeDate !== today) {
     if (p.lastPracticeDate === yesterdayISO()) p.streak += 1;
     else p.streak = 1;
     p.lastPracticeDate = today;
   }
-
-  if (!p.completedItems.includes(itemId)) {
-    p.completedItems.push(itemId);
-    p.xp += xpGain;
-  }
-
-  const unit = curriculum.units.find((u) => u.id === unitId);
-  if (unit && !p.completedUnits.includes(unitId)) {
-    const allDone = unit.items.every((i) => p.completedItems.includes(i.id));
-    if (allDone) p.completedUnits.push(unitId);
-  }
-
   saveProgress(p);
-  return p;
 }
 
-export function nextPlayableUnit(curriculum: Curriculum, progress: UserProgress): string | null {
-  const units = [...curriculum.units].sort((a, b) => a.order - b.order);
-  for (const unit of units) {
-    if (!isUnitUnlocked(unit.id, curriculum, progress)) continue;
-    const { done, total } = unitProgress(unit.id, curriculum, progress);
-    if (done < total) return unit.id;
+export function awardXp(amount: number): UserProgress {
+  touchStreak();
+  const fresh = loadProgress();
+  fresh.xp += amount;
+  saveProgress(fresh);
+  return fresh;
+}
+
+export function completeLesson(lessonId: string, unitId: string, syllabus: Syllabus, bonusXp = 15): UserProgress {
+  touchStreak();
+  const fresh = loadProgress();
+  if (!fresh.completedLessons.includes(lessonId)) {
+    fresh.completedLessons.push(lessonId);
+    fresh.xp += bonusXp;
   }
-  return units[units.length - 1]?.id ?? null;
+
+  const unit = syllabus.find((u) => u.unit_id === unitId);
+  if (unit && !fresh.completedUnits.includes(unitId)) {
+    const allLessonsDone =
+      unit.lessons.length > 0 && unit.lessons.every((l) => fresh.completedLessons.includes(l.lesson_id));
+    if (allLessonsDone) fresh.completedUnits.push(unitId);
+  }
+
+  saveProgress(fresh);
+  return fresh;
+}
+
+export function isUnitUnlocked(unitId: string, syllabus: Syllabus, progress: UserProgress): boolean {
+  const index = syllabus.findIndex((u) => u.unit_id === unitId);
+  if (index <= 0) return true;
+  return progress.completedUnits.includes(syllabus[index - 1].unit_id);
+}
+
+export function isLessonUnlocked(lessonId: string, unit: SyllabusUnit, progress: UserProgress): boolean {
+  const idx = unit.lessons.findIndex((l) => l.lesson_id === lessonId);
+  if (idx <= 0) return true;
+  return progress.completedLessons.includes(unit.lessons[idx - 1].lesson_id);
+}
+
+export function unitLessonProgress(
+  unitId: string,
+  syllabus: Syllabus,
+  progress: UserProgress,
+): { done: number; total: number } {
+  const unit = syllabus.find((u) => u.unit_id === unitId);
+  if (!unit) return { done: 0, total: 0 };
+  const total = unit.lessons.length;
+  const done = unit.lessons.filter((l) => progress.completedLessons.includes(l.lesson_id)).length;
+  return { done, total };
+}
+
+export function nextPlayableLesson(
+  syllabus: Syllabus,
+  progress: UserProgress,
+): { unitId: string; lessonId: string } | null {
+  for (const unit of syllabus) {
+    if (!isUnitUnlocked(unit.unit_id, syllabus, progress)) continue;
+    for (const lesson of unit.lessons) {
+      if (!isLessonUnlocked(lesson.lesson_id, unit, progress)) continue;
+      if (!progress.completedLessons.includes(lesson.lesson_id)) {
+        return { unitId: unit.unit_id, lessonId: lesson.lesson_id };
+      }
+    }
+  }
+  const last = syllabus[syllabus.length - 1];
+  const lastLesson = last?.lessons[last.lessons.length - 1];
+  if (last && lastLesson) return { unitId: last.unit_id, lessonId: lastLesson.lesson_id };
+  return null;
 }

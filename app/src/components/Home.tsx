@@ -1,60 +1,67 @@
-import type { Curriculum, UserProgress } from "../types";
-import { isUnitUnlocked, nextPlayableUnit, unitProgress } from "../utils/progress";
+import type { Syllabus, UserProgress } from "../types";
+import { isUnitUnlocked, nextPlayableLesson, unitLessonProgress } from "../utils/progress";
 
 interface Props {
-  curriculum: Curriculum;
+  syllabus: Syllabus;
   progress: UserProgress;
-  onSelectUnit: (id: string) => void;
+  onSelectUnit: (unitId: string) => void;
 }
 
-export function Home({ curriculum, progress, onSelectUnit }: Props) {
-  const units = [...curriculum.units].sort((a, b) => a.order - b.order);
-  const continueUnit = nextPlayableUnit(curriculum, progress);
+export function Home({ syllabus, progress, onSelectUnit }: Props) {
+  const next = nextPlayableLesson(syllabus, progress);
 
   return (
     <main className="home">
       <section className="hero">
         <h1>Learn Bengali from zero</h1>
         <p className="subtitle">
-          Start with the alphabet — vowels, consonants, and vowel markers — then vocabulary and
-          sentences. Complete each unit to unlock the next.
+          Cyclic practice: mistakes come back until you master them — no hearts, no failing out. Start
+          with script foundations, then your first words and sentences.
         </p>
-        {continueUnit && (
-          <button type="button" className="btn primary continue-btn" onClick={() => onSelectUnit(continueUnit)}>
+        {next && (
+          <button
+            type="button"
+            className="btn primary continue-btn"
+            onClick={() => onSelectUnit(next.unitId)}
+          >
             Continue learning
           </button>
         )}
       </section>
 
       <section className="paths">
-        <h2>Your path</h2>
+        <h2>Course units</h2>
         <ol className="unit-path">
-          {units.map((unit) => {
-            const unlocked = isUnitUnlocked(unit.id, curriculum, progress);
-            const { done, total } = unitProgress(unit.id, curriculum, progress);
-            const complete = progress.completedUnits.includes(unit.id);
+          {syllabus.map((unit, order) => {
+            const unlocked = isUnitUnlocked(unit.unit_id, syllabus, progress);
+            const { done, total } = unitLessonProgress(unit.unit_id, syllabus, progress);
+            const complete = progress.completedUnits.includes(unit.unit_id);
 
             return (
-              <li key={unit.id} className={`unit-step ${unlocked ? "" : "locked"} ${complete ? "done" : ""}`}>
+              <li
+                key={unit.unit_id}
+                className={`unit-step ${unlocked ? "" : "locked"} ${complete ? "done" : ""}`}
+              >
                 <button
                   type="button"
                   className="unit-card"
                   disabled={!unlocked}
-                  onClick={() => onSelectUnit(unit.id)}
+                  onClick={() => onSelectUnit(unit.unit_id)}
                 >
-                  <span className="unit-order">{unit.order + 1}</span>
-                  <span className="unit-icon bengali">{unit.icon}</span>
+                  <span className="unit-order">{order + 1}</span>
                   <span className="unit-text">
-                    <span className="unit-title">{unit.title}</span>
-                    <span className="unit-sub">{unit.subtitle}</span>
-                    <span className="unit-desc">{unit.description}</span>
+                    <span className="unit-title">{unit.unit_title}</span>
+                    <span className="unit-sub">{unit.lessons.length} lessons</span>
                     {unlocked && (
                       <span className="unit-progress-bar">
-                        <span className="unit-progress-fill" style={{ width: `${(done / total) * 100}%` }} />
+                        <span
+                          className="unit-progress-fill"
+                          style={{ width: `${total ? (done / total) * 100 : 0}%` }}
+                        />
                       </span>
                     )}
                     <span className="path-progress">
-                      {!unlocked ? "Locked" : complete ? "Complete" : `${done}/${total} items`}
+                      {!unlocked ? "Locked" : complete ? "Complete" : `${done}/${total} lessons`}
                     </span>
                   </span>
                 </button>
