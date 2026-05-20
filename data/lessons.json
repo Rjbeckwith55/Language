@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "language": "bn",
+  "dialect": "bn-BD",
+  "lessons": [
+    {
+      "lesson_id": "basics_1",
+      "category_id": "basics",
+      "english_phrase": "Hello.",
+      "bengali_script": "হ্যালো।",
+      "bengali_transliteration": "Hyalo.",
+      "audio_file": "basics_1.mp3"
+    },
+    {
+      "lesson_id": "basics_2",
+      "category_id": "basics",
+      "english_phrase": "Good morning.",
+      "bengali_script": "সুপ্রভাত।",
+      "bengali_transliteration": "Suprobhat.",
+      "audio_file": "basics_2.mp3"
+    },
+    {
+      "lesson_id": "basics_3",
+      "category_id": "basics",
+      "english_phrase": "Thank you.",
+      "bengali_script": "ধন্যবাদ।",
+      "bengali_transliteration": "Dhonnobad.",
+      "audio_file": "basics_3.mp3"
+    },
+    {
+      "lesson_id": "basics_4",
+      "category_id": "basics",
+      "english_phrase": "How are you?",
+      "bengali_script": "আপনি কেমন আছেন?",
+      "bengali_transliteration": "Apni kemon achen?",
+      "audio_file": "basics_4.mp3"
+    },
+    {
+      "lesson_id": "basics_5",
+      "category_id": "basics",
+      "english_phrase": "I am fine.",
+      "bengali_script": "আমি ভালো আছি।",
+      "bengali_transliteration": "Ami bhalo achi.",
+      "audio_file": "basics_5.mp3"
+    },
+    {
+      "lesson_id": "basics_6",
+      "category_id": "basics",
+      "english_phrase": "The boy eats rice.",
+      "bengali_script": "ছেলেটি ভাত খায়।",
+      "bengali_transliteration": "Cheleti bhat khay.",
+      "audio_file": "basics_6.mp3"
+    },
+    {
+      "lesson_id": "basics_7",
+      "category_id": "basics",
+      "english_phrase": "She drinks water.",
+      "bengali_script": "সে পানি পান করে।",
+      "bengali_transliteration": "Se pani pan kore.",
+      "audio_file": "basics_7.mp3"
+    },
+    {
+      "lesson_id": "basics_8",
+      "category_id": "basics",
+      "english_phrase": "We learn Bengali.",
+      "bengali_script": "আমরা বাংলা শিখি।",
+      "bengali_transliteration": "Amra Bangla shikhi.",
+      "audio_file": "basics_8.mp3"
+    },
+    {
+      "lesson_id": "food_1",
+      "category_id": "food",
+      "english_phrase": "I want rice.",
+      "bengali_script": "আমি ভাত চাই।",
+      "bengali_transliteration": "Ami bhat chai.",
+      "audio_file": "food_1.mp3"
+    },
+    {
+      "lesson_id": "food_2",
+      "category_id": "food",
+      "english_phrase": "This fish is delicious.",
+      "bengali_script": "এই মাছ সুস্বাদু।",
+      "bengali_transliteration": "Ei mach shushadu.",
+      "audio_file": "food_2.mp3"
+    },
+    {
+      "lesson_id": "food_3",
+      "category_id": "food",
+      "english_phrase": "Give me tea, please.",
+      "bengali_script": "আমাকে চা দিন, দয়া করে।",
+      "bengali_transliteration": "Amake cha din, doya kore.",
+      "audio_file": "food_3.mp3"
+    },
+    {
+      "lesson_id": "food_4",
+      "category_id": "food",
+      "english_phrase": "I do not eat meat.",
+      "bengali_script": "আমি মাংস খাই না।",
+      "bengali_transliteration": "Ami mangsho khai na.",
+      "audio_file": "food_4.mp3"
+    },
+    {
+      "lesson_id": "food_5",
+      "category_id": "food",
+      "english_phrase": "The bread is fresh.",
+      "bengali_script": "রুটি তাজা।",
+      "bengali_transliteration": "Ruti taja.",
+      "audio_file": "food_5.mp3"
+    },
+    {
+      "lesson_id": "food_6",
+      "category_id": "food",
+      "english_phrase": "Spicy food is good.",
+      "bengali_script": "ঝাল খাবার ভালো।",
+      "bengali_transliteration": "Jhal khabar bhalo.",
+      "audio_file": "food_6.mp3"
+    },
+    {
+      "lesson_id": "food_7",
+      "category_id": "food",
+      "english_phrase": "We cook at home.",
+      "bengali_script": "আমরা বাড়িতে রান্না করি।",
+      "bengali_transliteration": "Amra barite ranna kori.",
+      "audio_file": "food_7.mp3"
+    },
+    {
+      "lesson_id": "food_8",
+      "category_id": "food",
+      "english_phrase": "Breakfast is ready.",
+      "bengali_script": "নাস্তা প্রস্তুত।",
+      "bengali_transliteration": "Nasta prostut.",
+      "audio_file": "food_8.mp3"
+    },
+    {
+      "lesson_id": "travel_1",
+      "category_id": "travel",
+      "english_phrase": "Where is the station?",
+      "bengali_script": "স্টেশন কোথায়?",
+      "bengali_transliteration": "Station kothay?",
+      "audio_file": "travel_1.mp3"
+    },
+    {
+      "lesson_id": "travel_2",
+      "category_id": "travel",
+      "english_phrase": "I need a ticket.",
+      "bengali_script": "আমার একটি টিকিট দরকার।",
+      "bengali_transliteration": "Amar ekti ticket dorkar.",
+      "audio_file": "travel_2.mp3"
+    },
+    {
+      "lesson_id": "travel_3",
+      "category_id": "travel",
+      "english_phrase": "How much is the fare?",
+      "bengali_script": "ভাড়া কত?",
+      "bengali_transliteration": "Bhara kot?",
+      "audio_file": "travel_3.mp3"
+    },
+    {
+      "lesson_id": "travel_4",
+      "category_id": "travel",
+      "english_phrase": "The bus is late.",
+      "bengali_script": "বাস দেরি করেছে।",
+      "bengali_transliteration": "Bas deri koreche.",
+      "audio_file": "travel_4.mp3"
+    },
+    {
+      "lesson_id": "travel_5",
+      "category_id": "travel",
+      "english_phrase": "Turn left here.",
+      "bengali_script": "এখানে বামে ঘুরুন।",
+      "bengali_transliteration": "Ekhane bame ghurun.",
+      "audio_file": "travel_5.mp3"
+    },
+    {
+      "lesson_id": "travel_6",
+      "category_id": "travel",
+      "english_phrase": "The hotel is near.",
+      "bengali_script": "হোটেল কাছে।",
+      "bengali_transliteration": "Hotel kache.",
+      "audio_file": "travel_6.mp3"
+    },
+    {
+      "lesson_id": "travel_7",
+      "category_id": "travel",
+      "english_phrase": "I am lost.",
+      "bengali_script": "আমি হারিয়ে গেছি।",
+      "bengali_transliteration": "Ami hariye gechi.",
+      "audio_file": "travel_7.mp3"
+    },
+    {
+      "lesson_id": "travel_8",
+      "category_id": "travel",
+      "english_phrase": "When does the train leave?",
+      "bengali_script": "ট্রেন কখন ছাড়বে?",
+      "bengali_transliteration": "Train kokhon charbe?",
+      "audio_file": "travel_8.mp3"
+    },
+    {
+      "lesson_id": "family_1",
+      "category_id": "family",
+      "english_phrase": "This is my mother.",
+      "bengali_script": "এটি আমার মা।",
+      "bengali_transliteration": "Eti amar ma.",
+      "audio_file": "family_1.mp3"
+    },
+    {
+      "lesson_id": "family_2",
+      "category_id": "family",
+      "english_phrase": "My father works hard.",
+      "bengali_script": "আমার বাবা কঠোর পরিশ্রম করেন।",
+      "bengali_transliteration": "Amar baba kothor porishrom koren.",
+      "audio_file": "family_2.mp3"
+    },
+    {
+      "lesson_id": "family_3",
+      "category_id": "family",
+      "english_phrase": "She has two brothers.",
+      "bengali_script": "তার দুই ভাই আছে।",
+      "bengali_transliteration": "Tar dui bhai ache.",
+      "audio_file": "family_3.mp3"
+    },
+    {
+      "lesson_id": "family_4",
+      "category_id": "family",
+      "english_phrase": "The baby is sleeping.",
+      "bengali_script": "শিশুটি ঘুমাচ্ছে।",
+      "bengali_transliteration": "Shishuti ghumachche.",
+      "audio_file": "family_4.mp3"
+    },
+    {
+      "lesson_id": "family_5",
+      "category_id": "family",
+      "english_phrase": "We love our family.",
+      "bengali_script": "আমরা আমাদের পরিবারকে ভালোবাসি।",
+      "bengali_transliteration": "Amra amader poribarke bhalobashi.",
+      "audio_file": "family_5.mp3"
+    },
+    {
+      "lesson_id": "family_6",
+      "category_id": "family",
+      "english_phrase": "My sister is a student.",
+      "bengali_script": "আমার বোন একজন ছাত্রী।",
+      "bengali_transliteration": "Amar bon ekjon chatri.",
+      "audio_file": "family_6.mp3"
+    },
+    {
+      "lesson_id": "family_7",
+      "category_id": "family",
+      "english_phrase": "Grandfather tells stories.",
+      "bengali_script": "দাদা গল্প বলেন।",
+      "bengali_transliteration": "Dada golpo bolen.",
+      "audio_file": "family_7.mp3"
+    },
+    {
+      "lesson_id": "family_8",
+      "category_id": "family",
+      "english_phrase": "They live in Dhaka.",
+      "bengali_script": "তারা ঢাকায় থাকে।",
+      "bengali_transliteration": "Tara Dhakay thake.",
+      "audio_file": "family_8.mp3"
+    }
+  ],
+  "categories": [
+    { "id": "basics", "title": "Basics", "icon": "🌱" },
+    { "id": "food", "title": "Food", "icon": "🍛" },
+    { "id": "travel", "title": "Travel", "icon": "✈️" },
+    { "id": "family", "title": "Family", "icon": "👨‍👩‍👧" }
+  ]
+}

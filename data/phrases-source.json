@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "id": "basics",
+      "title": "Basics",
+      "icon": "🌱",
+      "phrases": [
+        "Hello.",
+        "Good morning.",
+        "Thank you.",
+        "How are you?",
+        "I am fine.",
+        "The boy eats rice.",
+        "She drinks water.",
+        "We learn Bengali."
+      ]
+    },
+    {
+      "id": "food",
+      "title": "Food",
+      "icon": "🍛",
+      "phrases": [
+        "I want rice.",
+        "This fish is delicious.",
+        "Give me tea, please.",
+        "I do not eat meat.",
+        "The bread is fresh.",
+        "Spicy food is good.",
+        "We cook at home.",
+        "Breakfast is ready."
+      ]
+    },
+    {
+      "id": "travel",
+      "title": "Travel",
+      "icon": "✈️",
+      "phrases": [
+        "Where is the station?",
+        "I need a ticket.",
+        "How much is the fare?",
+        "The bus is late.",
+        "Turn left here.",
+        "The hotel is near.",
+        "I am lost.",
+        "When does the train leave?"
+      ]
+    },
+    {
+      "id": "family",
+      "title": "Family",
+      "icon": "👨‍👩‍👧",
+      "phrases": [
+        "This is my mother.",
+        "My father works hard.",
+        "She has two brothers.",
+        "The baby is sleeping.",
+        "We love our family.",
+        "My sister is a student.",
+        "Grandfather tells stories.",
+        "They live in Dhaka."
+      ]
+    }
+  ]
+}

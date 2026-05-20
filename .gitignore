@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.local
+service-account.json
+*-credentials.json
+__pycache__/
+*.pyc
+.venv/
+venv/
+scripts/output/
+.cache/
